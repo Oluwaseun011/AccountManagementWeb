@@ -1,0 +1,53 @@
+{% extends 'style.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-md-5 mt-5">
+                <div class="card bg-transparent border-0">
+                    <form action="{% url 'get_loan' %}" method="post">
+                        {% csrf_token %}
+                        <div class="card-body">
+                            <div class="text-center pt-3">
+                                <img src="{% static 'amsapp/img/bank logo.jpg' %}" alt="logo" height="75px"
+                                     width="75px">
+                            </div>
+                            <div class="pt-3 text-center pb-3 home-text">
+                                <h3 class="text-primary">codeBANK</h3>
+                            </div>
+                            <div class="pt-3 text-center">
+                                <h5 class="text-primary">GET LOAN</h5>
+                            </div>
+                            <div class="form-row">
+                                <label class="form-check-label text-primary" for="account_number">Account
+                                    Number:</label>
+                                <input name="account_number" id="account_number" class="form-control" type="text">
+                            </div>
+                            <div class="form-row pt-2">
+                                <label class="form-check-label text-primary" for="loan_type">Loan Type:</label>
+                                <select name="loan_type" id="loan_type" class="form-control">
+                                    <option value=" ">Select a loan type</option>
+                                    <option value="car">Car Loan</option>
+                                    <option value="education">Education Loan</option>
+                                    <option value="household">House Loan</option>
+                                    <option value="emergency">Emergency Loan</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label class="form-check-label text-primary" for="account_pin">PIN:</label>
+                                <input name="account_pin" id="account_pin" class="form-control" type="password">
+                            </div>
+                            <div class="text-center pt-4">
+                                <button type="submit" class="btn btn-primary text-light align-content-center">
+                                    Get Loan
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-5"></div>
+        </div>
+    </div>
+{% endblock %}

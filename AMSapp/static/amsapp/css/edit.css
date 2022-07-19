@@ -1,0 +1,56 @@
+#qwe{
+    background: linear-gradient(to right, #0c5460, #9fcdff);
+}
+
+#ewq{
+    background: linear-gradient(to right, #0c5460, #9fcdff);
+}
+
+#asd{
+    background-image: url("../img/mobile bank.jpg");
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#dsa{
+    background-image: url("../img/mobile bank.jpg");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.img-size{
+    width: 150px;
+    height: 40px;
+}
+
+.home-img{
+    width: 350px;
+    height: 350px;
+    position: relative;
+    float: right;
+    margin-top: 20px;
+}
+
+html{
+    font-family: 'lato', sans-serif;
+}
+.home-text{
+    color: #000080;
+    font-size: xx-large;
+    font-weight: 800;
+}
+
+#cbn{
+    width: 30px;
+    height: 30px;
+}
+
+#ndic{
+    width: 50px;
+    height: 30px;
+}
+
+
+

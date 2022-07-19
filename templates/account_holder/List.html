@@ -1,0 +1,53 @@
+{% extends 'holderbase.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 mt-5">
+                <div class="card-body">
+                    <div class="text-center pt-3">
+                        <img src="{% static 'amsapp/img/bank logo.jpg' %}" alt="logo" height="75px"
+                             width="75px">
+                    </div>
+                    <div class="pt-3 text-center pb-3 home-text">
+                        <h3 class="text-primary">codeBANK</h3>
+                    </div>
+                    <div class="pt-3 text-center">
+                        <h5 class="text-primary">ACCOUNT HOLDER LIST</h5>
+                    </div>
+
+                    <table class="table table-hover table-responsive card-body">
+                        <thead>
+                        <tr>
+                            <th>First name</th>
+                            <th>Last name</th>
+                            <th>Username</th>
+                            <th>Phone Number</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        {% for account_holder in account_holders %}
+                            <tbody>
+                            <tr>
+                                <td>{{ account_holder.first_name }}</td>
+                                <td>{{ account_holder.last_name }}</td>
+                                <td>{{ account_holder.username }}</td>
+                                <td>{{ account_holder.phone_number }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="{% url 'account_holder_details' account_holder.id %}"
+                                           class="btn btn-success">Details</a>
+                                        <a href="{% url 'edit_account_holder' account_holder.id %}"
+                                           class="btn btn-warning">Edit</a>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
